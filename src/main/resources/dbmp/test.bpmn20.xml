@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="064c149b-3bc7-11e8-8361-d43a65071c8e">
+  <process id="process1529" name="test" isExecutable="true">
+    <sequenceFlow id="SequenceFlow9575" sourceRef="startEvent6892" targetRef="approveUserTask4066"/>
+    <sequenceFlow id="SequenceFlow1394" sourceRef="approveUserTask4066" targetRef="endEvent8126"/>
+    <startEvent id="startEvent6892"/>
+    <approveUserTask id="approveUserTask4066" name="审批任务" activiti:assignAble="false" activiti:addsignAble="true" activiti:addsignbehindAble="true" activiti:rejectAble="true" activiti:canBeRejected="true" activiti:delegateAble="false" activiti:samepostApprove="false" activiti:sendRejectMesToEvery="false" activiti:mulOperations="null" activiti:extendAttributes="[]" activiti:category="064c149b-3bc7-11e8-8361-d43a65071c8e"/>
+    <endEvent id="endEvent8126"/>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_process1529">
+    <bpmndi:BPMNPlane bpmnElement="process1529" id="BPMNPlane_process1529">
+      <bpmndi:BPMNShape bpmnElement="startEvent6892" id="BPMNShape_startEvent6892">
+        <omgdc:Bounds height="24.0" width="24.0" x="210.0" y="164.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="approveUserTask4066" id="BPMNShape_approveUserTask4066">
+        <omgdc:Bounds height="60.0" width="90.0" x="284.0" y="146.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endEvent8126" id="BPMNShape_endEvent8126">
+        <omgdc:Bounds height="24.0" width="24.0" x="424.0" y="164.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="SequenceFlow9575" id="BPMNEdge_SequenceFlow9575">
+        <omgdi:waypoint x="12.0" y="12.0"/>
+        <omgdi:waypoint x="45.0" y="30.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="SequenceFlow1394" id="BPMNEdge_SequenceFlow1394">
+        <omgdi:waypoint x="45.0" y="30.0"/>
+        <omgdi:waypoint x="12.0" y="12.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
