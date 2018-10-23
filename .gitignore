@@ -1,9 +1,6 @@
 .DS_STORE
 .idea
 /*.iml
-.properties
-/eiap-plus/src/main/resources/*.properties
-/example/src/main/resources/*.properties
-/eiap-plus/src/main/resources
-*.sql
+target/*
+/target/
 
