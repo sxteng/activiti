@@ -2,7 +2,12 @@
 
 <beans xmlns="http://www.springframework.org/schema/beans"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <context:annotation-config></context:annotation-config>
 
   <bean id="processEngineConfiguration"
     class="org.activiti.engine.impl.cfg.StandaloneProcessEngineConfiguration">
@@ -21,11 +26,12 @@
     <property name="databaseSchemaUpdate" value="false" />
 
     <!-- job executor configurations -->
-    <property name="jobExecutorActivate" value="false" />
 
-<!--    <property name="asyncExecutor" ref="asyncExecutor" />-->
-    <property name="asyncExecutorEnabled" value="true" />
-    <property name="asyncExecutorActivate" value="true" />
+      <property name="jobExecutorActivate" value="false" />
+      <property name="asyncExecutor" ref="asyncExecutor" />
+      <property name="jobExecutor" ref="jobExecutor" />
+<!--    <property name="asyncExecutorEnabled" value="true" />
+    <property name="asyncExecutorActivate" value="true" />-->
 
     <property name="defaultFailedJobWaitTime" value="1" />
     <property name="asyncFailedJobWaitTime" value="1" />
@@ -60,11 +66,18 @@
 
   </bean>
 
-<!--  <bean id="asyncExecutor" class="org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor">
+  <bean id="asyncExecutor" class="org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor">
     <property name="defaultAsyncJobAcquireWaitTimeInMillis" value="1000" />
     <property name="defaultTimerJobAcquireWaitTimeInMillis" value="1000" />
-  </bean>-->
+  </bean>
 
 
+
+    <bean id="jobExecutor" class="org.activiti.engine.impl.jobexecutor.DefaultJobExecutor">
+
+    </bean>
+    <bean id="dudateTaskExecutor" class="com.sxteng.ubpm.task.taskexcutor.DefaultDudateTaskExecutor">
+     <property name="taskExecutorActivate" value="true"></property>
+    </bean>
 
 </beans>

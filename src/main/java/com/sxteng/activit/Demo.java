@@ -33,7 +33,7 @@ public class Demo {
 
         // Deploy the process definition
         repositoryService.createDeployment()
-                .addClasspathResource("dbmp/parallel.bpmn")
+                .addClasspathResource("dbmp/timer.bpmn")
                 .deploy();
 
 
@@ -96,7 +96,13 @@ public class Demo {
         List<String> assigneeList = new ArrayList<String>();
         assigneeList.add("sxteng08");
         map.put("assigneeList", assigneeList);
-        runtimeService.startProcessInstanceByKey("parallel", map);
+        runtimeService.startProcessInstanceByKey("timer", map);
+
+        try {
+            Thread.sleep(1000 * 60 *10);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
     }
 
